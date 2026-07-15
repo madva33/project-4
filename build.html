@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Build — LOADOUT</title>
+  <meta name="description" content="Review the products and bundles in your build, adjust quantities, and see your running total." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&family=Albert+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/shop.css" />
+  <link rel="stylesheet" href="css/build.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="logo" href="index.html">
+        <svg class="logo__mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 22 L16 12 L26 22" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 28 L16 18 L26 28" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+        </svg>
+        <span class="logo__text">
+          <span class="logo__name">LOADOUT</span>
+          <span class="logo__tagline">Gaming Gear &amp; Setups</span>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="shop.html?category=pcs">Bundles</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="build-indicator" href="build.html">
+          <span class="build-indicator__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+            <span class="build-indicator__count" id="build-count" data-count="0">0</span>
+          </span>
+          <span class="build-indicator__total" id="build-total">$0</span>
+          <span class="build-indicator__label">Your build</span>
+        </a>
+        <span class="auth-buttons" id="auth-buttons">
+          <a href="login.html" class="btn btn-ghost btn-sm">Log in</a>
+          <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+        </span>
+        <span class="auth-user" id="auth-user" hidden>
+          <span class="auth-user__greeting" id="auth-greeting"></span>
+          <button type="button" class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
+        </span>
+        <button type="button" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="page-header">
+      <div class="container">
+        <span class="eyebrow">Review &amp; order</span>
+        <h1>Your build <span id="build-item-count" style="font-weight:400; color:var(--ink-soft); font-size:var(--text-lg);"></span></h1>
+        <p class="page-header__sub">Everything you've added, in one place, with a running total.</p>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="build-layout" id="build-layout" hidden>
+        <div id="build-items"></div>
+
+        <aside class="build-summary">
+          <h2>Order summary</h2>
+          <div class="build-summary-rows">
+            <div class="build-summary-row">
+              <span>Subtotal</span>
+              <span id="build-subtotal">$0</span>
+            </div>
+            <div class="build-summary-row is-savings" id="build-savings-row" hidden>
+              <span>Bundle savings</span>
+              <span id="build-savings">$0</span>
+            </div>
+            <div class="build-summary-row is-total">
+              <span>Total</span>
+              <span id="build-grand-total">$0</span>
+            </div>
+          </div>
+          <div class="build-summary__actions">
+            <button type="button" class="btn btn-primary btn-block" id="checkout-btn">Place order</button>
+            <a class="btn btn-outline btn-block" href="shop.html">Continue shopping</a>
+          </div>
+          <p class="build-summary__note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Demo checkout — no account required, no payment processed.
+          </p>
+        </aside>
+      </div>
+
+      <div class="empty-state" id="build-empty">
+        <svg class="empty-state__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <h2>Your build is empty</h2>
+        <p>Add a product from the shop, or start from a bundle and adjust it from there.</p>
+        <a class="btn btn-primary" href="shop.html">Browse the shop</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/build.js"></script>
+  <script src="js/product-card.js"></script>
+  <script src="js/bundle-card.js"></script>
+  <script src="js/quickview.js"></script>
+  <script src="js/bundle-quickview.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/build-page.js"></script>
+</body>
+</html>

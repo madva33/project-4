@@ -1,0 +1,96 @@
+
+
+:root {
+  --bg: #f4f5f8;               
+  --surface: #ffffff;          
+  --surface-sunken: #eaecf1;   
+  --border: #e2e4ea;           
+  --border-strong: #cbceda;    
+
+  --ink: #14161d;              
+  --ink-soft: #5b6070;        
+  --ink-faint: #6d7280;        
+  --ink-on-dark: #f4f5f8;      
+  --ink-on-dark-soft: #a6abbd;
+
+  --surface-dark: #14161d;
+  --surface-dark-raised: #1d2029;
+
+
+  --signal: #4a3aff;           
+  --signal-strong: #3b2ed6;    
+  --signal-soft: #ebe9ff;      
+  --volt: #b4ff39;          
+  --volt-strong: #9be019;
+
+
+  --success: #1f7a4d;
+  --success-soft: #e2f5e9;
+  --error: #b7362b;
+  --error-soft: #fbe8e6;
+
+
+  --font-display: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Albert Sans", "Segoe UI", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+  --text-3xl: 3.5rem;
+
+  --leading-tight: 1.15;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+
+  --container-width: 1280px;
+  --container-padding: var(--space-5);
+  --header-height: 76px;
+
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+
+  --shadow-sm: 0 1px 2px rgba(20, 22, 29, 0.06);
+  --shadow-md: 0 8px 20px rgba(20, 22, 29, 0.08), 0 2px 6px rgba(20, 22, 29, 0.04);
+  --shadow-lg: 0 20px 48px rgba(20, 22, 29, 0.18), 0 6px 14px rgba(20, 22, 29, 0.06);
+  --shadow-focus: 0 0 0 3px rgba(74, 58, 255, 0.28);
+
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 140ms;
+  --duration-base: 220ms;
+  --duration-slow: 360ms;
+
+  --z-header: 100;
+  --z-modal-backdrop: 300;
+  --z-modal: 310;
+  --z-toast: 400;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+  }
+}

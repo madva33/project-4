@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlMadva3 — Gaming Gear &amp; Ready-Built Setups</title>
+  <meta name="description" content="Monitors, laptops, desktop PCs and peripherals — bought piece by piece or as a discounted, ready-made setup." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&family=Albert+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/shop.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="logo" href="index.html">
+        <svg class="logo__mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 22 L16 12 L26 22" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 28 L16 18 L26 28" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+        </svg>
+        <span class="logo__text">
+          <span class="logo__name">AlMadva3</span>
+          <span class="logo__tagline">Gaming Gear &amp; Setups</span>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="index.html" class="is-current">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="shop.html?category=pcs">Bundles</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="build-indicator" href="build.html">
+          <span class="build-indicator__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+            <span class="build-indicator__count" id="build-count" data-count="0">0</span>
+          </span>
+          <span class="build-indicator__total" id="build-total">$0</span>
+          <span class="build-indicator__label">Your build</span>
+        </a>
+        <span class="auth-buttons" id="auth-buttons">
+          <a href="login.html" class="btn btn-ghost btn-sm">Log in</a>
+          <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+        </span>
+        <span class="auth-user" id="auth-user" hidden>
+          <span class="auth-user__greeting" id="auth-greeting"></span>
+          <button type="button" class="btn btn-ghost btn-sm" id="logout-btn">Log out</button>
+        </span>
+        <button type="button" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow">Piece it together or grab a bundle</span>
+          <h1>Build a setup that's actually yours.</h1>
+          <p class="hero__lede">
+            22 pieces of gear across monitors, laptops, desktop PCs and
+            accessories — buy exactly what you need, or start from a
+            bundle that's already priced at a discount and adjust from there.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn-primary" href="shop.html">Browse the shop</a>
+            <a class="btn btn-outline" href="shop.html?category=pcs">See ready-made bundles</a>
+          </div>
+        </div>
+        <div class="hero__figure">
+          <span class="stat-stamp">RTX 5090 32G</span>
+          <img class="hero__img" src="images/MSI-GeForce-RTX_-5090-32G-LIGHTNING-Z-Graphics-Card_01.webp" alt="Vanguard Mid-Tower">
+          <div class="hero__figure-caption">
+            <span>MSI-GeForce-RTX</span>
+            <span>440,000.00 EGP</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Shop by category</span>
+            <h2>Four categories, twenty-two pieces of gear.</h2>
+          </div>
+          <a class="btn-link" href="shop.html">View full catalog →</a>
+        </div>
+        <div class="category-tiles" id="category-tiles"></div>
+      </div>
+    </section>
+
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Ready-made, already discounted</span>
+            <h2>Featured bundles</h2>
+            <p>Every bundle is priced against the same components sold separately on this site — the savings shown are real, not inflated list prices.</p>
+          </div>
+          <a class="btn-link" href="shop.html?category=pcs">View all bundles →</a>
+        </div>
+        <div class="bundle-grid" id="featured-bundles"></div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__top">
+      <div class="footer-brand">
+        <a class="logo" href="index.html">
+          <svg class="logo__mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 22 L16 12 L26 22" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 28 L16 18 L26 28" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+          </svg>
+          <span class="logo__text">
+            <span class="logo__name">AlMadva3</span>
+            <span class="logo__tagline">Gaming Gear &amp; Setups</span>
+          </span>
+        </a>
+        <p>Twenty-two pieces of gear across monitors, laptops, desktop PCs and accessories, plus bundles priced at a genuine discount against buying separately.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="shop.html?category=monitors">Monitors</a></li>
+          <li><a href="shop.html?category=laptops">Laptops</a></li>
+          <li><a href="shop.html?category=pcs">Desktop PCs</a></li>
+          <li><a href="shop.html?category=accessories">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Info</h3>
+        <ul>
+          <li><a href="#">Shipping &amp; returns</a></li>
+          <li><a href="#">Warranty</a></li>
+          <li><a href="#">Build support</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-note">
+        <h3>Why AlMadva3</h3>
+        <p>Bundle pricing is computed live from the same product prices listed in the shop — swap a component and the savings figure updates with it.</p>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <span>&copy; 2026 Mohamed Ayman Saad.</span>
+      <nav aria-label="Legal">
+        <a href="#">Privacy</a> · <a href="#">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/build.js"></script>
+  <script src="js/product-card.js"></script>
+  <script src="js/bundle-card.js"></script>
+  <script src="js/quickview.js"></script>
+  <script src="js/bundle-quickview.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

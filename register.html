@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — LOADOUT</title>
+  <meta name="description" content="Create a LOADOUT account to track your builds." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&family=Albert+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <a class="skip-link" href="#register-email">Skip to register form</a>
+
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="logo" href="index.html">
+        <svg class="logo__mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 22 L16 12 L26 22" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 28 L16 18 L26 28" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+        </svg>
+        <span class="logo__text">
+          <span class="logo__name">LOADOUT</span>
+          <span class="logo__tagline">Gaming Gear &amp; Setups</span>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="auth-page">
+    <div class="auth-card">
+
+      <div class="auth-panel auth-panel--deco" aria-hidden="true">
+        <span class="eyebrow">New account</span>
+        <p class="deco-heading">Build your ultimate setup.</p>
+        <p class="deco-tagline">Save bundles, track your builds, and check out faster — all with one account.</p>
+        <div class="deco-product-grid deco-product-grid--single">
+          <img class="deco-product-grid__item" src="images/b2055275539729185484b6d0cfcfbd2b.jpg" alt="" loading="lazy">
+        </div>
+        <p class="deco-cta">Already a customer? <a href="login.html">Log in</a></p>
+      </div>
+
+      <div class="auth-panel auth-panel--form">
+        <div class="auth-form-header">
+          <span class="eyebrow">Account</span>
+          <h1>Create account</h1>
+          <p>Takes about 30 seconds. No card required.</p>
+        </div>
+
+        <div class="form-banner" id="register-error" role="alert" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span id="register-error-text"></span>
+        </div>
+
+        <form class="auth-form" id="register-form" novalidate autocomplete="on">
+
+          <div class="field">
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" name="email" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="register-password">Password</label>
+            <input type="password" id="register-password" name="password" placeholder="At least 6 characters" autocomplete="new-password" required minlength="6" />
+            <span class="field-hint">Minimum 6 characters</span>
+          </div>
+
+          <div class="field">
+            <label for="register-confirm">Confirm password</label>
+            <input type="password" id="register-confirm" name="confirm" placeholder="Re-enter your password" autocomplete="new-password" required />
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Create account</button>
+
+        </form>
+
+        <p class="auth-form-footer">
+          Already have an account? <a href="login.html">Log in</a>
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/auth-page.js"></script>
+</body>
+</html>
